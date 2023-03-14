@@ -5,11 +5,16 @@ const pResult = document.querySelector('#result');
 
 btn.addEventListener('click', calcularPrecioConDescuento);
 
+//  Metodo Objetos
+
 // const couponsObj = {
 //     'Premio Oro': 30,
 //     'Premio Plata': 25,
 //     'Premio Bronce': 15,
 // }
+
+
+//Metodo arraysObjetos
 
 const couponList = [];
 couponList.push({
