@@ -1,11 +1,34 @@
 function esPar(lista) {
-    numero / 2
+    return !(lista.length % 2);
+
+}
+function esImpar(lista) {
+    return lista.length % 2;
 
 }
 
-function calcularPromedio(lista) {
+function calcularMediana(lista) {
+    const listaEsPar = esPar(lista);
 
-    const sumaLista = lista.reduce((a, b) => a + b);
+    if(listaEsPar){
+        //..
+    }
+    else {
+        const indexMitadListaImpar = Math.floor(lista.length / 2);
+        const medianaListaImpar = lista (indexMitadListaImpar);
+        console.log(indexMitadListaImpar);
+        console.log(lista(medianaListaImpar));
+        return medianaListaImpar;
+    }
+}
+
+
+function calcularPromedio(lista) {
+    function sumarTodosElementos(valorAcumulado, nuevoValor){
+        return valorAcumulado + nuevoValor;
+    }
+
+    const sumaLista = lista.reduce(sumarTodosElementos);
 
     const promedio = sumaLista / lista.length;
     console.log(promedio);
