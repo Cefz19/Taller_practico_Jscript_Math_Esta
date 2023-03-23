@@ -6,6 +6,21 @@ function esImpar(lista) {
     return lista.length % 2;
 
 }
+function calcularModa(lista){
+    const listaCoupt = {};
+
+    for (let i = 0; i < lista.length; i++){
+        const elemento = lista[i];
+
+        if(listaCoupt[elemento]){
+            listaCoupt[elemento] += 1;
+        } else {
+            listaCoupt[elemento] = 1; 
+        }
+    }
+    const listaArray = Object.entries(listaCoupt);
+    console.log(listaCoupt, listaArray);
+}
 
 function calcularMediana(listaDesordenada) {
     const lista = ordenarLista(listaDesordenada);
