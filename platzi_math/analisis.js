@@ -50,3 +50,46 @@ function proyeccionPorPersona(nombrePersona) {
 
     return nuevoSalario;
 }
+
+// Analisis empresarial
+/* 
+{
+    Industrias Mokepon: {
+        2018: [salario, salario, salario],
+        2019:
+        2020:
+        2025:
+        2026:
+    }
+    Industrias Mokepon: {},
+    Industrias Mokepon: {},
+    Industrias Mokepon: {},
+}*/
+
+const empresas = {};
+for (persona of salarios) {
+    for (trabajo of persona.trabajos) {
+        if (!empresas[trabajo.empresa]){
+            empresas[trabajo.empresa] = {};
+        }
+        if (!empresas[trabajo.empresa][trabajo.year]){
+            empresas[trabajo.empresa][trabajo.year] = [];
+        }
+
+        empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
+    }
+}
+
+console.log({empresas});
+
+
+function medianaEmpresaYear(nombre, year) {
+    if (!empresas[nombre]){
+        console.log('La empresa no existe');
+    } else if (!empresas[nombre][year]) {
+        console.log('La empresa no dio salarios ese año');
+    } else {
+        return PlatziMath.calcularMediana(empresas[nombre][year]); 
+    }
+
+}
