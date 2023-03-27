@@ -1,4 +1,4 @@
-console.log(salarios);
+// console.log(salarios);
 
 // analsis personal de juanita
 
@@ -80,7 +80,7 @@ for (persona of salarios) {
     }
 }
 
-console.log({empresas});
+// console.log({empresas});
 
 
 function medianaEmpresaYear(nombre, year) {
@@ -125,5 +125,37 @@ function proyeccionPorEmpresa(nombre) {
     
         return nuevoMediana;
     }
+
+}
+
+
+
+// Analisis general
+
+function medianaGeneral() {
+    const listaMedianas = salarios.map(persona => medianaPorPersona(persona.name));
+    // const medianaPorCadaNombre = nombres.map(nombre => medianaPorPersona(nombre));
+    
+    const mediana = PlatziMath.calcularMediana(listaMedianas);
+
+    return mediana;
+}
+
+function medianaTop10() {
+    const listaMedianas = salarios.map(
+        persona => medianaPorPersona(persona.name)
+        );
+        
+        const medianasOrdenadas = PlatziMath.ordenarLista (listaMedianas);
+
+        const cantidad = listaMedianas.length / 10;
+        const limite = listaMedianas.length - cantidad
+
+        const top10 = medianasOrdenadas.slice(
+            limite, medianasOrdenadas.length);
+
+
+            const medianaTop10 = PlatziMath.calcularMediana (top10);
+            return medianaTop10
 
 }
